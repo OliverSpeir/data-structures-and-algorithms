@@ -71,8 +71,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 let callback = num => Math.pow(2,num);
 const mapTwoToThe = (arr) => {
-  let newArr = arr.map(callback);
-  return newArr;
+  return arr.map(callback);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -193,7 +192,12 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  return arr.map(item => {
+    return ({
+      name: item.stat.name,
+      total: item.effort + item.baseStat
+    });
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -207,25 +211,25 @@ Run your tests from the console: jest challenges-07.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
+xdescribe('Testing challenge 1', () => {
   test('It should return a new array of numbers raised to the thrid power', () => {
     expect(raisedToTheThird([2, 4, 5, -7, 0])).toStrictEqual([8, 64, 125, -343, 0]);
   });
 });
 
-describe('Testing challenge 2', () => {
+xdescribe('Testing challenge 2', () => {
   test('It should add one to all the numbers in the array', () => {
     expect(addOne([2, 3, 5, 11])).toStrictEqual([3, 4, 6, 12]);
   });
 });
 
-describe('Testing challenge 3', () => {
+xdescribe('Testing challenge 3', () => {
   test('It should add a question mark to the end of each string', () => {
     expect(addQuestion(['hello', '301', 'students'])).toStrictEqual(['hello?', '301?', 'students?']);
   });
 });
 
-describe('Testing challenge 4', () => {
+xdescribe('Testing challenge 4', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(forLoopTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(forLoopTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -236,7 +240,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-describe('Testing challenge 5', () => {
+xdescribe('Testing challenge 5', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(forEachTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(forEachTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -247,7 +251,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-describe('Testing challenge 6', () => {
+xdescribe('Testing challenge 6', () => {
   test('It should return two raised to the power of the integer', () => {
     expect(mapTwoToThe([0, 4, 5])).toStrictEqual([1, 16, 32]);
     expect(mapTwoToThe([0, 4, 5]).length).toStrictEqual(3);
@@ -294,7 +298,7 @@ xdescribe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35, },
