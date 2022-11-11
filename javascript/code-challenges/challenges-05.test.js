@@ -12,7 +12,10 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
-  // Solution code here...
+   let newArr = people.map(x => {
+        return x['firstName'] + ' ' + x['lastName'];
+    })
+    return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,7 +26,10 @@ Write a function named addValues that, given an array of numbers as input, uses 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
-  // Solution code here...
+    let total = arr.reduce((acc,curr) => {
+        return acc + curr;
+    },0);
+    return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,7 +45,10 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  // Solution code here...
+    let total = arr.reduce((acc,curr) => {
+        return acc + curr['purchasePrice'];
+    },0);
+    return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,12 +60,14 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+    let total = arr.reduce((acc,curr) => {
+        return acc + 1;
+    },0);
+    return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
-
 Write a function named returnNames that, given the Star Wars data, below, uses reduce to return an array containing the names of the characters.
 ------------------------------------------------------------------------------------------------ */
 
@@ -111,8 +122,15 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+    let total =[];
+    arr.reduce((acc,curr) => {
+        total.push(curr['name']);
+    },[]);
+    return total;
 };
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -123,7 +141,9 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+    let arr = str.split('');
+    let flipped = arr.reduce((acc,curr) => curr + acc, '');
+    return flipped.toString();
 };
 
 /* ------------------------------------------------------------------------------------------------
