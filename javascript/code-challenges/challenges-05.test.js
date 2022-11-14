@@ -202,8 +202,14 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
-};
+  return arr.reduce ((total,curr)=> {
+    if (curr.children && curr.children.length > 0){
+      return total + curr.children.length;
+    } else {
+      return total;
+    }
+  },0);
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -349,7 +355,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
