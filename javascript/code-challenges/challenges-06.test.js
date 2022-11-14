@@ -20,10 +20,38 @@ For example:
 ]
 
 Returns: ['dyoll', 'eimaj'];
+
+
+const getNames = (arr) => {
+  let names = arr.map(x => {
+    return x.name;
+  })
+  let flipped =  names.toString();
+  
+  return flipped.reduce((acc,curr) => {
+    return curr + acc
+  }, '');
+};
+
+
+const getNames = (arr) => {
+  let arr1 = arr.map(x=> x.name);
+  let str = arr1.reverse();
+  let str2 = str.toString();
+  let str3 = str2.split('');
+  let flipped = str3.reduce((acc,curr) => curr + acc, '');
+  return flipped;
+};
+
+  return arr1.reduce((acc,curr) => {
+    return acc + curr
+  }, []);
+
 ------------------------------------------------------------------------------------------------ */
 
 const getNames = (arr) => {
-  // Solution code here...
+  let arr1 = arr.map(x=> x.name.split('').reverse().join(''))
+  return arr1;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,7 +62,8 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  // Solution code here...
+  let str2 = str.concat(" The end.");
+  return str2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,7 +80,7 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
-  // Solution code here...
+  arr.push(arr[0]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,7 +99,7 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
+  obj.yearBorn = year;
 };
 
 /* ------------------------------------------------------------------------------------------------
