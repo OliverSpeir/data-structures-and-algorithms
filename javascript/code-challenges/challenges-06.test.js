@@ -21,31 +21,7 @@ For example:
 
 Returns: ['dyoll', 'eimaj'];
 
-
-const getNames = (arr) => {
-  let names = arr.map(x => {
-    return x.name;
-  })
-  let flipped =  names.toString();
-  
-  return flipped.reduce((acc,curr) => {
-    return curr + acc
-  }, '');
-};
-
-
-const getNames = (arr) => {
-  let arr1 = arr.map(x=> x.name);
-  let str = arr1.reverse();
-  let str2 = str.toString();
-  let str3 = str2.split('');
-  let flipped = str3.reduce((acc,curr) => curr + acc, '');
-  return flipped;
-};
-
-  return arr1.reduce((acc,curr) => {
-    return acc + curr
-  }, []);
+x.name.split('').reverse().join('')
 
 ------------------------------------------------------------------------------------------------ */
 
