@@ -24,9 +24,7 @@ let starWarsPeople = [
   },
 ];
 
-const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
-};
+const sortStarWarsCharacters = (starWarsArr) => starWarsArr.sort ((a,b) => b.height - a.height);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -35,18 +33,20 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  arr.splice(idx,3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
-
+{
+  let string = arr.join(" ");
+  return string;
+};
 Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
 ------------------------------------------------------------------------------------------------ */
 
-const joinArray = (arr) => {
-  // Solution code here...
-};
+const joinArray = (arr) => arr.join(" ")
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -59,11 +59,24 @@ Your function should use slice within a loop and return an array of each success
 
 For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
+
+
+const howMuchPencil = (str) => {
+  let result = [];
+  for (let i = 0; i < str.length; i++) {
+    result.push(str.slice(i,i++));
+  }
+  return result;
+};
+
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i <= str.length; i++) {
+    result.push(str.slice(i));
+  }
+  console.log(result);
   return result;
 };
 
@@ -76,7 +89,8 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  let newArr = arr.split('');
+  return newArr;
 };
 
 
@@ -87,9 +101,13 @@ You are making a grocery list for ingredients needed in the gruffalo crumble rec
 
 Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
 
-Use slice for this function, maybe more than once. The Array.indexOf() method may also be helpful.
+Use slice for this function, maybe more than once. The Array.indexOf(gruffalo) method may also be helpful.
 
 Do not use split for this function.
+
+indexOf string to " " then delete everything ahead of that 
+
+
 ------------------------------------------------------------------------------------------------ */
 
 const gruffaloCrumble = {
@@ -123,7 +141,11 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    let howmanytoslice = recipe.ingredients[i].indexOf(' ');
+    let firstslice=  recipe.ingredients[i].slice(howmanytoslice+1);
+    result.push(firstslice.slice(firstslice.indexOf(' ')+1));
+  };
   return result;
 };
 
