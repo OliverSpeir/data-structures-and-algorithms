@@ -11,7 +11,7 @@ const sortByChildren = (charArray) => {
     } else if (b.house > a.house) {
       return -1;
     }
-  }); 
+  });
   //console.log(sort);
   return sort;
 }
@@ -21,11 +21,11 @@ const sortByChildren = (charArray) => {
   let sort = charArray.sort (( a,b ) => {
     if ( b.children.length > a.children.length){
       return -1;
-    } 
+    }
     else (b.house > a.house ){
       return -1;
     }
-  }); 
+  });
   // let sortHouse = sort.sort((a,b) => {
   //   if (a.house > b.house ){
   //     return -1;
@@ -89,7 +89,7 @@ const sortByChildren = (charArray) => {
     } else {
      return a.house > b.house ? 1 : -1
     }
-  }); 
+  });
   console.log(sort);
   return sort;
 }
@@ -97,7 +97,7 @@ const sortByChildren = (charArray) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not. 
+Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not.
 
 ------------------------------------------------------------------------------------------------ */
 
@@ -144,7 +144,9 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let reg = /A-Z/;
+  let reg = /\b[A-Z][a-zA-Z]*/gm;
+  const capitalWords = str.match(reg) || [];
+  return capitalWords;
 };
 
 /* ------------------------------------------------------------------------------------------------
