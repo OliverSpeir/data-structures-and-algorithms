@@ -81,13 +81,13 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  let sort = charArray.sort (( a,b ) => {
-    if ( b.children.length > a.children.length){
+  let sort = charArray.sort((a, b) => {
+    if (b.children.length > a.children.length) {
       return -1;
     } else if (b.children.length < a.children.length) {
       return 1;
     } else {
-     return a.house > b.house ? 1 : -1
+      return a.house > b.house ? 1 : -1
     }
   });
   console.log(sort);
@@ -156,7 +156,11 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let reg = /^[A-J]/;
+  const arr2 = arr.filter(x =>reg.test(x));
+  // const sortedCities = arr.match(reg) || [];
+  // return sortedCities;
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -277,7 +281,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-describe('Testing challenge 5', () => {
+xdescribe('Testing challenge 5', () => {
   test('It should only return words that begin with a capital letter', () => {
     const capitalResult = isCapitalized('We only want to Return the Words that begin With a capital Letter');
 
@@ -290,7 +294,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
