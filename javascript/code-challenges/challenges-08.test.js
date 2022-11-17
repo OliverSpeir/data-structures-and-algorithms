@@ -4,8 +4,36 @@
 
 CHALLENGE 1 - Review
 
-Write a function named sortByChildren that sorts the characters below by the number of children in each house (fewest to most). If a house has the same number of children, sort alphabetically by house name.
+const sortByChildren = (charArray) => {
+  let sort = charArray.sort (( a,b ) => {
+    if ( b.children.length > a.children.length){
+      return -1;
+    } else if (b.house > a.house) {
+      return -1;
+    }
+  }); 
+  //console.log(sort);
+  return sort;
+}
 
+
+
+  let sort = charArray.sort (( a,b ) => {
+    if ( b.children.length > a.children.length){
+      return -1;
+    } 
+    else (b.house > a.house ){
+      return -1;
+    }
+  }); 
+  // let sortHouse = sort.sort((a,b) => {
+  //   if (a.house > b.house ){
+  //     return -1;
+  //   }
+  //})
+
+Write a function named sortByChildren that sorts the characters below by the number of children in each house (fewest to most). If a house has the same number of children, sort alphabetically by house name.
+charArray.sort( (a,b) => b.children.length = a.children.length ? ((a,b)=> b.house > a.house) : ((a,b) => b.children.length > a.children.length) )
 ------------------------------------------------------------------------------------------------ */
 let characters = [
   {
@@ -53,8 +81,18 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  // Solution code here...
-};
+  let sort = charArray.sort (( a,b ) => {
+    if ( b.children.length > a.children.length){
+      return -1;
+    } else if (b.children.length < a.children.length) {
+      return 1;
+    } else {
+     return a.house > b.house ? 1 : -1
+    }
+  }); 
+  console.log(sort);
+  return sort;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -64,7 +102,8 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
+  let reg = /w/;
+  return reg.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,7 +119,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+  let reg = /\d/;
+  return reg.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,7 +131,8 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  // Solution code here...
+  let reg = /world/;
+  return reg.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -103,7 +144,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  let reg = /A-Z/;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -189,14 +230,14 @@ Run your tests from the console: jest challenges-04.solution.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
+xdescribe('Testing challenge 1', () => {
   test('It should sort the characters by number of children', () => {
     expect(sortByChildren(characters)[0].name).toStrictEqual('Euron');
     expect(sortByChildren(characters)[0].children.length).toStrictEqual(0);
   });
 });
 
-describe('Testing challenge 2', () => {
+xdescribe('Testing challenge 2', () => {
   test('It should return true if the input contains a lower case w', () => {
     expect(containsW('hello world')).toBe(true);
   });
@@ -208,7 +249,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-describe('Testing challenge 3', () => {
+xdescribe('Testing challenge 3', () => {
   test('It should return true if the input is a number', () => {
     expect(isNum(1234567890)).toBeTruthy();
     expect(isNum('12345')).toBeTruthy();
@@ -222,7 +263,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-describe('Testing challenge 4', () => {
+xdescribe('Testing challenge 4', () => {
   test('It should return true if the input contains the word "world" in lower case', () => {
     expect(containsWorld('hello world')).toBe(true);
   });
@@ -247,7 +288,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-describe('Testing challenge 6', () => {
+xdescribe('Testing challenge 6', () => {
   let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
