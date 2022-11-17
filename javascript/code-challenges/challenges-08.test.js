@@ -11,7 +11,7 @@ const sortByChildren = (charArray) => {
     } else if (b.house > a.house) {
       return -1;
     }
-  }); 
+  });
   //console.log(sort);
   return sort;
 }
@@ -21,11 +21,11 @@ const sortByChildren = (charArray) => {
   let sort = charArray.sort (( a,b ) => {
     if ( b.children.length > a.children.length){
       return -1;
-    } 
+    }
     else (b.house > a.house ){
       return -1;
     }
-  }); 
+  });
   // let sortHouse = sort.sort((a,b) => {
   //   if (a.house > b.house ){
   //     return -1;
@@ -81,15 +81,15 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  let sort = charArray.sort (( a,b ) => {
-    if ( b.children.length > a.children.length){
+  let sort = charArray.sort((a, b) => {
+    if (b.children.length > a.children.length) {
       return -1;
     } else if (b.children.length < a.children.length) {
       return 1;
     } else {
-     return a.house > b.house ? 1 : -1
+      return a.house > b.house ? 1 : -1
     }
-  }); 
+  });
   console.log(sort);
   return sort;
 }
@@ -97,7 +97,7 @@ const sortByChildren = (charArray) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not. 
+Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not.
 
 ------------------------------------------------------------------------------------------------ */
 
@@ -144,7 +144,9 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let reg = /A-Z/;
+  let reg = /\b[A-Z][a-zA-Z]*/gm;
+  const capitalWords = str.match(reg) || [];
+  return capitalWords;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -154,7 +156,11 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let reg = /^[A-J]/;
+  const arr2 = arr.filter(x =>reg.test(x));
+  // const sortedCities = arr.match(reg) || [];
+  // return sortedCities;
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -275,7 +281,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-describe('Testing challenge 5', () => {
+xdescribe('Testing challenge 5', () => {
   test('It should only return words that begin with a capital letter', () => {
     const capitalResult = isCapitalized('We only want to Return the Words that begin With a capital Letter');
 
@@ -288,7 +294,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
