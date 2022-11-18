@@ -139,6 +139,9 @@ most likely need object.keys
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
+  let newArr = arr.filter(charObj => Object.keys(charObj).includes('children')).filter(charOb => Object.values(charOb).includes(character));
+
+  return newArr.length === 0 ? false : true;
 };
 
 /* ------------------------------------------------------------------------------------------------
