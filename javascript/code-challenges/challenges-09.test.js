@@ -17,7 +17,6 @@ const maxInArray = (arr) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
-
 Write a function named getCourseKeys that takes in the courseInfo object and returns an array containing the keys for the courseInfo object.
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
@@ -28,7 +27,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,7 +39,8 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  if (Object.values(obj).includes(value)) return true;
+  else return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,15 +59,16 @@ HR has asked you to change the data to make it easier to print so that it looks 
   'Ada Lovelace: 222-349-9842',
   'Alan Turing: 222-853-5933'
 ]
-
+  let arr1 =  Object.keys(obj) + Object.values(obj);
+  console.log(arr1);
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  let arr = Object.entries(obj).map ( (entries) => {
+    return (entries.join(': '));
+  });
+  return arr;
 };
-
-
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -119,7 +120,7 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.map ((x)=> houses.push(x.house));
   return houses;
 };
 
@@ -138,8 +139,6 @@ most likely need object.keys
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -224,13 +223,13 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return the keys from an object', () => {
     expect(getCourseKeys(courseInfo)).toStrictEqual(['name', 'duration', 'topics', 'finalExam']);
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return true if the value is in the object', () => {
     expect(checkValues({ class: '301' }, '301')).toBe(true);
   });
