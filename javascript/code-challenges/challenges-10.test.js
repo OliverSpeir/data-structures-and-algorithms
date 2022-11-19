@@ -4,11 +4,10 @@
 CHALLENGE 1 - Review
 
 Write a function named returnTen, takes in a string and uses split and splice to return the last 10 characters from that string as elements of an array.
-
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
-  // Solution code here...
+  return str.split('').splice(-10);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,7 +25,13 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  const tainer = [];
+  for ( let i in matrix ) {
+    for (let j in matrix[i]){
+      tainer.push(matrix[i][j]);
+    }
+  }
+  return Math.max(...tainer);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,7 +49,13 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  const tainer = [];
+  for ( let i in matrix ) {
+    for (let j in matrix[i]){
+      tainer.push(matrix[i][j]);
+    }
+  }
+  return tainer.reduce((a,b) => a + b,0);
 };
 
 
@@ -71,8 +82,16 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  const tainer = [];
+  for ( let i = 0; i < stores[0].length;i++ ) {
+    let counter = 0;
+    for (let j = 0; j < stores.length;j++){
+      let cookies = stores[j][i];
+      counter = counter + cookies;
+    }
+    tainer.push(counter);
+  }
+  return tainer;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,14 +102,54 @@ Pat has decided that he would also like to organize his data as objects containi
 Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
+
+
+
+xdescribe('Testing challenge 5', () => {
+  test('It should create an object of data for each store', () => {
+    expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
+      { sales: '88 cookies', time: '9 a.m.' },
+      { sales: '153 cookies', time: '10 a.m.' },
+      { sales: '252 cookies', time: '11 a.m.' },
+      { sales: '286 cookies', time: '12 p.m.' },
+      { sales: '139 cookies', time: '1 p.m.' },
+      { sales: '161 cookies', time: '2 p.m.' },
+      { sales: '145 cookies', time: '3 p.m.' },
+      { sales: '232 cookies', time: '4 p.m.' },
+      { sales: '276 cookies', time: '5 p.m.' },
+      { sales: '207 cookies', time: '6 p.m.' },
+      { sales: '161 cookies', time: '7 p.m.' },
+      { sales: '169 cookies', time: '8 p.m.' }
+    ]);
+
+    expect(salesData(hoursOpen, grandTotal(cookieStores)).length).toStrictEqual(hoursOpen.length);
+  });
+});
+
+needs object {
+  hours : data
+}
+
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  let arr = [];
+  hours.forEach((x,idx) => {
+    let obj = {};
+    obj.time = x;
+    obj.sales = data[idx].toString() + ' cookies';
+    arr.push(obj);
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
+ let a = errands[2];
+  let b = a.items;
+  let c = b[1];
+  let d = c.quantity;
+  console.log (
 
 Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array. The structure of the array will not change.
 ------------------------------------------------------------------------------------------------ */
@@ -110,9 +169,9 @@ const errands = [
   }
 ];
 
-const howManyTreats = (arr) => {
-  // Solution code here...
-};
+const howManyTreats = (arr) => arr[2].items[1].quantity;
+
+//errands[2].items.forEach(x=> tainer.push(x.quantity));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
