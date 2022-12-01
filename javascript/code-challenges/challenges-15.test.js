@@ -124,7 +124,18 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  return arr.sort((a,b)=>{
+    const aVal = a[property];
+    const bVal = b[property];
+
+    if (aVal < bVal){
+      return -1;
+    } else if (aVal > bVal){
+      return 1;
+    } else {
+      return 0;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -140,7 +151,7 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+  return /^(https:\/\/)/.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -163,7 +174,24 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  let a1 = (x) => {
+    return x.every(y => y !== '' && y === x[0])
+      ? true
+      : false;
+  };
+  //row
+  if (a1(board[0])) return true;
+  if (a1(board[1])) return true;
+  if (a1(board[2])) return true;
+  //col
+  if (a1([board[0][0],board[1][0],board[2][0]])) return true;
+  if (a1([board[0][1],board[1][1],board[2][1]])) return true;
+  if (a1([board[0][2],board[1][2],board[2][2]])) return true;
+  //diag
+  if (a1([board[0][0],board[1][1],board[2][2]])) return true;
+  if (a1([board[0][2],board[1][1],board[2][0]])) return true;
+  return false;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -177,14 +205,14 @@ Run your tests from the console: jest challenge-14.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-xdescribe('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should return a list of names', () => {
     const names = ['Mr. Brown', ' Ms. Red', 'Dr. Blue', 'Mrs.', '', 'Ms. Black', 'dr. Green', 'Mrs. Orange', 'Purple', 'Mr.  Pink'];
     expect(screenForNames(names)).toStrictEqual(['Mr. Brown', 'Dr. Blue', 'Ms. Black', 'Mrs. Orange']);
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should convert each word to title case', () => {
     const words = ['apple', 'banana', 'MacGyver'];
     expect(toTitleCase(words)).toStrictEqual(['Apple', 'Banana', 'MacGyver']);
@@ -200,7 +228,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should sort items by a price', () => {
 
     expect(sortBy('price', [
@@ -229,7 +257,7 @@ xdescribe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should check if url is https', () => {
 
     expect(isSecure('http://www.insecure.com')).toBe(false);
@@ -238,7 +266,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return true if there are three in a row', () => {
     expect(detectTicTacToeWin([['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X']])).toStrictEqual(true);
     expect(detectTicTacToeWin([['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])).toStrictEqual(true);
