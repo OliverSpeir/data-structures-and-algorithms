@@ -4,7 +4,7 @@ Cannot use any built in methods
 
 ## Whiteboard Process
 
-![array_reverse](/reverse_array.png)
+![array_reverse](/python/docs/array_reverse/reverse_array.png)
 
 ## Approach & Efficiency
 I used a for loop, because this is my favorite way to do things. I feel that for loops are both basic and advanced.
