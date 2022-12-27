@@ -15,7 +15,7 @@ class LinkedList:
         stringval = self.head
         string_values = ""
         while stringval is not None:
-            string_values += f"{ {stringval.value} } -> "
+            string_values += f"{{ {str(stringval.value)} }} -> "
             stringval = stringval.next
         string_values += "NULL"
         return string_values
