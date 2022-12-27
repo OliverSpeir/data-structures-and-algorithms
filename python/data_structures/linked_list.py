@@ -7,16 +7,15 @@ class Node:
 
 
 class LinkedList:
-
     def __init__(self):
         self.head = None
 
     def __str__(self):
-        stringval = self.head
+        current = self.head
         string_values = ""
-        while stringval is not None:
-            string_values += f"{{ {str(stringval.value)} }} -> "
-            stringval = stringval.next
+        while current is not None:
+            string_values += f"{{ {str(current.value)} }} -> "
+            current = current.next
         string_values += "NULL"
         return string_values
 

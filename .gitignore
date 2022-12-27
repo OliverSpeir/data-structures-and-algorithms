@@ -327,7 +327,7 @@ celerybeat-schedule
 
 # Environments
 .env
-.venv
+python/.venv
 env/
 venv/
 ENV/
