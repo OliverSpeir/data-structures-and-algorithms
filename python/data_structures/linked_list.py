@@ -56,8 +56,6 @@ class LinkedList:
         if previous is None:
             self.head = new_node
 
-
-
     def insert_after(self, after, value):
         current = self.head
         if current is None:
