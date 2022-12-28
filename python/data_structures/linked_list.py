@@ -42,32 +42,31 @@ class LinkedList:
     def insert_before(self, before, value):
         current = self.head
         previous = None
-        if current is None:
-            raise TargetError
-        while current.value is not before:
-            previous = current
-            current = current.next
-            if current is None:
-                raise TargetError
-        new_node = Node(value)
-        new_node.next = current
-        if previous is not None:
-            previous.next = new_node
-        if previous is None:
-            self.head = new_node
+        try:
+            while current.value is not before:
+                previous = current
+                current = current.next
+            new_node = Node(value)
+            new_node.next = current
+            if previous is not None:
+                previous.next = new_node
+            if previous is None:
+                self.head = new_node
+        except Exception as e:
+            raise TargetError(e)
 
     def insert_after(self, after, value):
         current = self.head
-        if current is None:
-            raise TargetError
-        while current.value is not after:
-            current = current.next
-            if current is None:
-                raise TargetError
-        new_node = Node(value)
-        new_node.next = current.next
-        current.next = new_node
+        try:
+            while current.value is not after:
+                current = current.next
+            new_node = Node(value)
+            new_node.next = current.next
+            current.next = new_node
+        except Exception as e:
+            raise TargetError(e)
 
 
 class TargetError(Exception):
+    print("searching for value that doesnt exist")
     pass
