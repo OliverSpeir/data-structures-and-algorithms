@@ -10,6 +10,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.next = None
+        self.count = 0
 
     def __str__(self):
         current = self.head
@@ -24,6 +25,7 @@ class LinkedList:
         new_node = Node(value)
         new_node.next = self.head
         self.head = new_node
+        self.count += 1
 
     def includes(self, value):
         current = self.head
@@ -65,6 +67,22 @@ class LinkedList:
             current.next = new_node
         except Exception as e:
             raise TargetError(e)
+
+    def kth_from_end(self, value):
+        current = self.head
+        length = 0
+        while current is not None:
+            current = current.next
+            length += 1
+        if value >= length:
+            raise TargetError(Exception)
+        if value < 0:
+            raise TargetError(Exception)
+        current = self.head
+        for x in range(0, length-value - 1):
+            print(current.value)
+            current = current.next
+        return current.value
 
 
 class TargetError(Exception):
