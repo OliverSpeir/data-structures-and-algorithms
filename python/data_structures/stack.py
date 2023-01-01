@@ -7,7 +7,7 @@ class Node:
 
 class Stack:
     """
-    Put docstring here
+    Linked List that functions strictly like a Stack. Knows its top only. Pop returns the value of the popped item.
     """
 
     def __init__(self):
@@ -19,18 +19,21 @@ class Stack:
         self.top = new_node
 
     def pop(self):
-        if self.top is NOne:
+        # if self.top is None:
+        #     raise InvalidOperationError("Method not allowed on empty collection")
+        try:
+            value = self.top.value
+            self.top = self.top.next
+            return value
+        except Exception as e:
             raise InvalidOperationError("Method not allowed on empty collection")
-        value = self.top.value
-        self.top = self.top.next
-        return value
 
     def peek(self):
         try:
             return self.top.value
         except Exception as e:
-            raise InvalidOperationError("Method not allowed one empty collection")
+            raise InvalidOperationError("Method not allowed on empty collection")
 
     def is_empty(self):
-        return self.front is None
+        return self.top is None
 
