@@ -1,8 +1,18 @@
 # Data Structures and Algorithms
 
-See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-code-challenges), in the Code 301 Setup Guide.
+## Table of Contents
+- [Array Reverse](/python/docs/array_reverse/README.md)
+- [Array Insert Shift](/python/docs/array_insert_shift/README.md)
+- [Array Binary Search](/python/docs/array_binary_search/README.md)
+- [LinkedList README](/python/docs/linked_list_README.md)
+- [LinkedList_insertions README](/python/docs/linked_list_insertions_README.md)
+- [LinkedList_kth README](/python/docs/linked_list_kth_README.md)
+- [LinkedList_zip README](/python/docs/linked_list_zip_README.md)
+- [Stack_and_Queue README](/python/docs/stack_and_queue_README.md)
 
-## Repository Quick Tour and Usage
+
+
+### Repository Quick Tour and Usage
 
 ### 301 Code Challenges
 
@@ -18,15 +28,9 @@ To run your tests
 - run `npm test` to run all of the tests
 - run `npm test ##` to only run tests for challenge ## (i.e. 01)
 
+
+See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-code-challenges), in the Code 301 Setup Guide.
+
 ### 401 Data Structures, Code Challenges
 
 - Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
-
-### Table of Contents
-- [Array Reverse](/python/docs/array_reverse/README.md)
-- [Array Insert Shift](/python/docs/array_insert_shift/README.md)
-- [Array Binary Search](/python/docs/array_binary_search/README.md)
-- [LinkedList README](/python/docs/linked_list_README.md)
-- [LinkedList_insertions README](/python/docs/linked_list_insertions_README.md)
-- [LinkedList_kth README](/python/docs/linked_list_kth_README.md)
-- [LinkedList_zip README](/python/docs/linked_list_zip_README.md)
