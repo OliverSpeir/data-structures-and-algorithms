@@ -1,4 +1,4 @@
-from invalid_operation_error import InvalidOperationError
+from python.data_structures.invalid_operation_error import InvalidOperationError
 
 
 class Node:
@@ -34,7 +34,7 @@ class Queue:
         try:
             return self.front.value
         except Exception as e:
-            raise invalidOperationError("Method not allowed on empty collection")
+            raise InvalidOperationError("Method not allowed on empty collection")
 
     def is_empty(self):
         return self.front is None
