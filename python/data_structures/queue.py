@@ -8,33 +8,33 @@ class Node:
 
 class Queue:
     """
-    Put docstring here
+    Linked list that functions as a Queue. Knows its head and tail, enqueue adds to tail and dequeue removes from head
     """
 
     def __init__(self):
-        self.front = None
-        self.back = None
+        self.head = None
+        self.tail = None
 
     def enqueue(self, value):
-        if self.back:
-            self.back.next = Node(value)
-            self.back = self.back.next
+        if self.tail:
+            self.tail.next = Node(value)
+            self.tail = self.tail.next
             return
-        self.back = self.front = Node(value)
+        self.tail = self.head = Node(value)
 
     def dequeue(self):
         try:
-            dequeued = self.front
-            self.front = self.front.next
+            dequeued = self.head
+            self.head = self.head.next
             return dequeued.value
         except Exception as e:
             raise InvalidOperationError("Method not allowed on empty collection")
 
     def peek(self):
         try:
-            return self.front.value
+            return self.head.value
         except Exception as e:
             raise InvalidOperationError("Method not allowed on empty collection")
 
     def is_empty(self):
-        return self.front is None
+        return self.head is None
