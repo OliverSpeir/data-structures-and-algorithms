@@ -29,3 +29,10 @@ Queue Methods:
     - returns head value
   - is_empty
     - returns boolean if head is not None
+
+
+## Code and Tests
+- [queue code](../data_structures/queue.py)
+- [stack code](../data_structures/stack.py)
+- [queue tests](../tests/data_structures/test_queue.py)
+- [stack tests](../tests/data_structures/test_stack.py)
