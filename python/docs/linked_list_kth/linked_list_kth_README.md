@@ -14,5 +14,5 @@ Efficiency: O(n) has will need to go through entire list twice every time which 
 - This code is not set up to be run as main at the moment
 
 ## Files
-- [code](../data_structures/linked_list.py)
-- [tests](../tests/code_challenges/test_linked_list_kth.py)
+- [code](../../data_structures/linked_list.py)
+- [tests](../../tests/code_challenges/test_linked_list_kth.py)

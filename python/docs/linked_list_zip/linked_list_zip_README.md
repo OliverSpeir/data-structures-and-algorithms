@@ -18,5 +18,5 @@ Efficiency: O(1) as the pointers are just being rearranged no new memory is allo
 - This code is not set up to be run as main at the moment
 
 ## Files
-- [code](../code_challenges/linked_list_zip.py)
-- [tests](../tests/code_challenges/test_linked_list_zip.py)
+- [code](../../code_challenges/linked_list_zip.py)
+- [tests](../../tests/code_challenges/test_linked_list_zip.py)
