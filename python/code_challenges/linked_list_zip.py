@@ -16,6 +16,5 @@ def zip_lists(a, b):
 
         a_current = a_next
         b_current = b_next
-        b.head = b_current
 
     return a
