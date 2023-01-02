@@ -9,6 +9,7 @@
 - [LinkedList_kth README](/python/docs/linked_list_kth/linked_list_kth_README.md)
 - [LinkedList_zip README](/python/docs/linked_list_zip/linked_list_zip_README.md)
 - [Stack_and_Queue README](/python/docs/stack_and_queue_README.md)
+- [Stack_and_Queue README](/python/docs/stack_queue_pseudo/README.md)
 
 
 

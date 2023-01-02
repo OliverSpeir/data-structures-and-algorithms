@@ -5,6 +5,7 @@ Instead, this PseudoQueue class will implement our standard queue interface (the
 Internally, utilize 2 Stack instances to create and manage the queue
 
 ## Whiteboard Process
+
 ![Stack Queue Whiteboard](/python/docs/stack_queue_pseudo/Psuedo_Queue_WB.png)
 
 ## Approach & Efficiency
@@ -17,5 +18,5 @@ Efficiency: O(n) has will need to go through entire list every time
 - This code is not set up to be run as main
 
 ## Files
-- [code](../data_structures/stack_queue_pseudo.py)
-- [tests](../tests/code_challenges/test_stack_queue_pseudo.py)
+- [code](../../code_challenges/stack_queue_pseudo.py)
+- [tests](../../tests/code_challenges/test_stack_queue_pseudo.py)
