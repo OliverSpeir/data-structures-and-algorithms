@@ -5,9 +5,9 @@
 - [Array Insert Shift](/python/docs/array_insert_shift/README.md)
 - [Array Binary Search](/python/docs/array_binary_search/README.md)
 - [LinkedList README](/python/docs/linked_list_README.md)
-- [LinkedList_insertions README](/python/docs/linked_list_insertions_README.md)
-- [LinkedList_kth README](/python/docs/linked_list_kth_README.md)
-- [LinkedList_zip README](/python/docs/linked_list_zip_README.md)
+- [LinkedList_insertions README](/python/docs/linked_list_insertions/linked_list_insertions_README.md)
+- [LinkedList_kth README](/python/docs/linked_list_kth/linked_list_kth_README.md)
+- [LinkedList_zip README](/python/docs/linked_list_zip/linked_list_zip_README.md)
 - [Stack_and_Queue README](/python/docs/stack_and_queue_README.md)
 
 
