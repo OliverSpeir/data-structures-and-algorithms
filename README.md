@@ -10,6 +10,7 @@
 - [LinkedList_zip README](/python/docs/linked_list_zip/linked_list_zip_README.md)
 - [Stack_and_Queue README](/python/docs/stack_and_queue_README.md)
 - [Stack_and_Queue README](/python/docs/stack_queue_pseudo/README.md)
+- [Stack_Queue_Animal_Shelter_README](/python/docs/stack_queue_animal_shelter/README.md)
 
 
 

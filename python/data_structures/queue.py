@@ -6,6 +6,7 @@ class Node:
         self.value = value
         self.next = nextval
 
+
 class Queue:
     """
     Linked list that functions as a Queue. Knows its head and tail, enqueue adds to tail and dequeue removes from head
