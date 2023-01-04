@@ -6,6 +6,7 @@ class Node:
         self.value = value
         self.next = nextval
 
+
 class Stack:
     """
     Linked List that functions strictly like a Stack. Knows its top only. Pop returns the value of the popped item.
