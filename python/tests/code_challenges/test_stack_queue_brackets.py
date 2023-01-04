@@ -63,3 +63,8 @@ def test_mismatched():
     actual = multi_bracket_validation("[}")
     expected = False
     assert actual == expected
+
+def test_extra_closed():
+    actual = multi_bracket_validation("[]]")
+    expected = False
+    assert actual == expected
