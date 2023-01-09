@@ -12,6 +12,7 @@
 - [Stack_and_Queue README](/python/docs/stack_queue_pseudo/README.md)
 - [Stack_Queue_Animal_Shelter_README](/python/docs/stack_queue_animal_shelter/README.md)
 - [Stack_Queue_Brackets_README](/python/docs/stack_queue_brackets/README.md)
+- [Binary_Trees_README](/python/docs/binary_tree_README.md)
 
 
 
