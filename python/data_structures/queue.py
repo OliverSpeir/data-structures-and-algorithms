@@ -16,12 +16,30 @@ class Queue:
         self.head = None
         self.tail = None
 
+    def __str__(self):
+        current = self.head
+        string = "blank"
+        while current:
+            string += current.value.value + "->"
+            current = current.next
+        return string
+
+    # def enqueue(self, value):
+    #     if self.tail:
+    #         self.tail.next = Node(value)
+    #         self.tail = self.tail.next
+    #         return
+    #     else:
+    #         self.tail = self.head = Node(value)
     def enqueue(self, value):
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
         if self.tail:
-            self.tail.next = Node(value)
-            self.tail = self.tail.next
-            return
-        self.tail = self.head = Node(value)
+            self.tail.next = new_node
+            self.tail = new_node
+        else:
+            self.tail = new_node
 
     def dequeue(self):
         try:
