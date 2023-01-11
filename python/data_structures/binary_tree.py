@@ -59,6 +59,7 @@ class BinaryTree:
             return None
         return max(self.pre_order())
 
+
 class Node:
     def __init__(self, value, left=None, right=None):
         self.value = value
