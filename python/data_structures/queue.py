@@ -42,12 +42,28 @@ class Queue:
             self.tail = new_node
 
     def dequeue(self):
+        # consider a queue with only 1 node
+        # TODO: refactor class to include a .length
         try:
+            if self.head == self.tail:
+                dequeued = self.head
+                self.head = self.tail = None
+                return dequeued.value
+
             dequeued = self.head
             self.head = self.head.next
             return dequeued.value
+
         except Exception as e:
             raise InvalidOperationError("Method not allowed on empty collection")
+
+    # def dequeue(self):
+    #     try:
+    #         dequeued = self.head
+    #         self.head = self.head.next
+    #         return dequeued.value
+    #     except Exception as e:
+    #         raise InvalidOperationError("Method not allowed on empty collection")
 
     def peek(self):
         try:
