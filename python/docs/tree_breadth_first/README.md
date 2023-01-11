@@ -2,7 +2,7 @@
 
 
 ## Whiteboard Process
-
+<img src="https://i.imgur.com/Aw1r4rK.png">
 
 ## Approach & Efficiency
 Approach:
